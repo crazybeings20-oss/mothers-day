@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Mother's Day</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Georgia', serif;
+      background: linear-gradient(to bottom, #ffe4ec, #fff5f7, #ffd9e8);
+      overflow-x: hidden;
+      color: #b03060;
+    }
+
+    .container {
+      width: 100%;
+      min-height: 100vh;
+      position: relative;
+      padding: 20px;
+    }
+
+    .floating-heart {
+      position: fixed;
+      color: rgba(255, 105, 180, 0.3);
+      animation: float 6s infinite ease-in-out;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    .welcome {
+      text-align: center;
+      padding: 100px 20px 70px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .welcome h1 {
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      color: #ff4f88;
+      margin-bottom: 20px;
+    }
+
+    .welcome p {
+      font-size: clamp(1rem, 3vw, 1.5rem);
+      max-width: 750px;
+      margin: auto;
+      line-height: 1.8;
+      color: #b24c74;
+    }
+
+    .scroll-text {
+      margin-top: 35px;
+      font-size: 1rem;
+      color: #d65a8a;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        opacity: 0.5;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0.5;
+      }
+    }
+
+    .memory-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      max-width: 1200px;
+      margin: auto;
+      position: relative;
+      z-index: 2;
+      padding-bottom: 80px;
+    }
+
+    .memory-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(10px);
+      border-radius: 35px;
+      padding: 20px;
+      box-shadow: 0 10px 30px rgba(255, 105, 180, 0.15);
+      transition: 0.4s ease;
+      cursor: pointer;
+      border: 1px solid #ffd1df;
+    }
+
+    .memory-card:hover {
+      transform: translateY(-5px) scale(1.02);
+    }
+
+    .heart {
+      font-size: 4rem;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .click-text {
+      text-align: center;
+      color: #c24f7c;
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+
+    .memory-content {
+      display: none;
+      animation: fadeIn 0.6s ease;
+    }
+
+    .memory-card.active .memory-content {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .memory-content img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 25px;
+      margin-bottom: 15px;
+    }
+
+    .memory-content p {
+      text-align: center;
+      line-height: 1.7;
+      font-size: 1.05rem;
+      color: #a94467;
+      padding: 0 10px;
+    }
+
+    .final-banner {
+      max-width: 900px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(10px);
+      border-radius: 45px;
+      padding: 50px 25px;
+      text-align: center;
+      box-shadow: 0 10px 35px rgba(255, 105, 180, 0.18);
+      border: 1px solid #ffd1df;
+      position: relative;
+      z-index: 2;
+      margin-bottom: 80px;
+    }
+
+    .final-banner h2 {
+      font-size: clamp(2rem, 6vw, 4rem);
+      color: #ff4f88;
+      margin-bottom: 25px;
+    }
+
+    .final-banner p {
+      font-size: clamp(1rem, 2.8vw, 1.3rem);
+      line-height: 1.9;
+      color: #a94467;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .signature {
+      margin-top: 30px;
+      font-size: 1.5rem;
+      color: #d64f83;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      .memory-content img {
+        height: 260px;
+      }
+
+      .welcome {
+        padding-top: 80px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="floating-heart" style="top:10%; left:10%; font-size:24px;">❤</div>
+    <div class="floating-heart" style="top:20%; left:80%; font-size:30px; animation-delay:1s;">❤</div>
+    <div class="floating-heart" style="top:60%; left:15%; font-size:28px; animation-delay:2s;">❤</div>
+    <div class="floating-heart" style="top:75%; left:70%; font-size:22px; animation-delay:3s;">❤</div>
+    <div class="floating-heart" style="top:40%; left:50%; font-size:26px; animation-delay:1.5s;">❤</div>
+
+    <section class="welcome">
+      <h1>Happy Mother’s Day 💖</h1>
+
+      <p>
+        Dear <strong>Santosh Kumari</strong>,<br>
+        this little website is filled with memories, love, and moments that mean the world to me ✨
+      </p>
+
+      <div class="scroll-text">
+        Scroll down and open the hearts 🌸
+      </div>
+    </section>
+
+    <section class="memory-grid">
+
+      <div class="memory-card" onclick="toggleCard(this)">
+        <div class="heart">💖</div>
+        <div class="click-text">Click to open a memory</div>
+
+        <div class="memory-content">
+          <img src="photo1.png" alt="memory">
+          <p>Thank you for making ordinary moments feel special.</p>
+        </div>
+      </div>
+
+      <div class="memory-card" onclick="toggleCard(this)">
+        <div class="heart">💖</div>
+        <div class="click-text">Click to open a memory</div>
+
+        <div class="memory-content">
+          <img src="photo2.png" alt="memory">
+          <p>Your strength, kindness, and love inspire me every day.</p>
+        </div>
+      </div>
+
+      <div class="memory-card" onclick="toggleCard(this)">
+        <div class="heart">💖</div>
+        <div class="click-text">Click to open a memory</div>
+
+        <div class="memory-content">
+          <img src="photo3.png" alt="memory">
+          <p>You’ve taught me kindness not through words, but through the way you live.</p>
+        </div>
+      </div>
+
+      <div class="memory-card" onclick="toggleCard(this)">
+        <div class="heart">💖</div>
+        <div class="click-text">Click to open a memory</div>
+
+        <div class="memory-content">
+          <img src="photo4.png" alt="memory">
+          <p>Your presence makes every place feel comforting and safe.</p>
+        </div>
+      </div>
+
+      <div class="memory-card" onclick="toggleCard(this)">
+        <div class="heart">💖</div>
+        <div class="click-text">Click to open a memory</div>
+
+        <div class="memory-content">
+          <img src="photo5.png" alt="memory">
+          <p>Thank you for loving me with patience, strength, and so much care.</p>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="final-banner">
+      <h2>🎀 Happy Mother’s Day 💖</h2>
+
+      <p>
+        Thank you for filling my life with love, warmth, and beautiful memories.<br>
+        No matter how much I grow, I’ll always be grateful for you.<br>
+        Happy Mother’s Day, Maa ✨
+      </p>
+
+      <div class="signature">
+        — Mahi 🌸
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    function toggleCard(card) {
+      card.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
